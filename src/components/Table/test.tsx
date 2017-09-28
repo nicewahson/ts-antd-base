@@ -2,17 +2,24 @@ import * as React from 'react'
 import Table3 from './index'
 
 
-const dataSource = [{
-  key: '1',
-  name: '胡彦斌',
-  age: 32,
-  address: '西湖区湖底公园1号'
-}, {
-  key: '2',
-  name: '胡彦祖',
-  age: 42,
-  address: '西湖区湖底公园1号'
-}];
+interface s{
+  key: string,
+  title: string,
+  name: string,
+  age: number
+
+}
+const dataSource:s[] = [];
+let i = 0
+while(i<22){
+  dataSource.push({
+    key: i.toString(),
+    title:`title${i}`,
+    name: `name${i}`,
+    age:i
+  })
+  i++
+}
 
 const columns = [{
   title: '姓名',

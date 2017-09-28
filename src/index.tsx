@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import es6p from 'es6-promise'
+es6p.polyfill()
 
 import Table from './components/Table/test'
 
