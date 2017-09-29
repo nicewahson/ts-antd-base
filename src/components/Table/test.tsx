@@ -22,20 +22,20 @@ while(i<22){
 }
 
 const columns = [{
-  title: '姓名',
-  dataIndex: 'name',
+  title: '创建时间',
+  dataIndex: 'createTime',
   key: 'name',
 }, {
-  title: '年龄',
-  dataIndex: 'age',
+  title: '生成码',
+  dataIndex: 'code',
   key: 'age',
 }, {
-  title: '住址',
-  dataIndex: 'address',
+  title: '模板名',
+  dataIndex: 'formatName',
   key: 'address',
 }];
 
 
-const Table = ()=><Table3 dataSource={dataSource} columns={columns}/>
+const Table = ()=><Table3 rowKey="code" dataSource={dataSource} columns={columns}/>
 
 export default Table

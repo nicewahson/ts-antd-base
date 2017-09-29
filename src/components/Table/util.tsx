@@ -5,7 +5,7 @@ const instance = axios.create({
 })
 
 export const request = (cb:Function) => {
-    instance.get('http://release-server.dev.sanqimei.com/lifeSpu/listPageLifeSpu?pageNumber=1&pageSize=10&state=2',
+    instance.get('http://mactivity-server.test.sanqimei.com/exchange/listPageExchangeCode?pageNumber=1&pageSize=10',
         {
             // params: {
             //     ID: 12345
