@@ -11,8 +11,13 @@ const decorator = (WrapComponent: any) => {
     }
     return Main
 }
-
-class Table3 extends React.Component<any, any>{
+interface TableProps{
+    // 数据源地址 传了这个参数意味着加载和翻页时都会从这个加载数据
+    dataUrl?:string,
+    update?: Function,
+    [propName: string]:any
+}
+class Table3 extends React.Component<TableProps, any>{
     // state = {
     //     dataSource: []
     // }
@@ -27,12 +32,12 @@ class Table3 extends React.Component<any, any>{
         request((data: any) => {
             console.log(data)
             this.setState((preState, prop) => {
-                console.log(preState, prop)
                 return { dataSource: data.list }
             })
         })
     }
     render() {
+        console.log('render')
         return (<div className="ant-table-37m">
             <Table {...this.props} {...this.state} />
         </div>)
