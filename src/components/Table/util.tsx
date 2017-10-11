@@ -4,8 +4,8 @@ const instance = axios.create({
     timeout: 3000
 })
 
-export const request = (cb:Function) => {
-    instance.get('http://mactivity-server.test.sanqimei.com/exchange/listPageExchangeCode?pageNumber=1&pageSize=10',
+export const request = (url: string, cb:Function) => {
+    instance.get(url,
         {
             // params: {
             //     ID: 12345

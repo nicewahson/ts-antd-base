@@ -2,21 +2,21 @@ import * as React from 'react'
 import Table3 from './index'
 
 
-interface s{
+interface s {
   key: string,
   title: string,
   name: string,
   age: number
 
 }
-const dataSource:s[] = [];
+const dataSource: s[] = [];
 let i = 0
-while(i<22){
+while (i < 22) {
   dataSource.push({
     key: i.toString(),
-    title:`title${i}`,
+    title: `title${i}`,
     name: `name${i}`,
-    age:i
+    age: i
   })
   i++
 }
@@ -24,18 +24,31 @@ while(i<22){
 const columns = [{
   title: '创建时间',
   dataIndex: 'createTime',
-  key: 'name',
+  key: 'createTime',
 }, {
-  title: '生成码',
-  dataIndex: 'code',
-  key: 'age',
+  title: '类目名',
+  dataIndex: 'categoryName',
+  key: 'categoryName',
 }, {
-  title: '模板名',
-  dataIndex: 'formatName',
-  key: 'address',
+  title: '服务名',
+  dataIndex: 'serverName',
+  key: 'serverName',
 }];
 
 
-const Table = ()=><Table3 rowKey="code" dataSource={dataSource} columns={columns}/>
+
+class Table extends React.Component<any,any> {
+  private table: any
+  constructor(){
+    super()
+  }
+  render() {
+    return (<div>
+      <a onClick={()=>{this.table.updateData()}}>click</a>
+      <Table3 ref = {(refc)=>{this.table = refc}} rowKey="id" dataSource={dataSource} columns={columns}
+        dataUrl='http://release-server.dev.sanqimei.com/lifeSpu/listPageLifeSpu' queryParams="state=2" />
+    </div>)
+  }
+}
 
 export default Table
