@@ -1,8 +1,8 @@
-import * as React from 'react'
-import Table3 from './index'
+import React from 'react'
+import Table37 from '../index'
 
 
-interface s {
+export interface s {
   key: string,
   title: string,
   name: string,
@@ -45,7 +45,7 @@ class Table extends React.Component<any,any> {
   render() {
     return (<div>
       <a onClick={()=>{this.table.updateData()}}>click</a>
-      <Table3 ref = {(refc)=>{this.table = refc}} rowKey="id" dataSource={dataSource} columns={columns}
+      <Table37 ref = {(refc)=>{this.table = refc}} rowKey="id" dataSource={dataSource} columns={columns}
         dataUrl='http://release-server.dev.sanqimei.com/lifeSpu/listPageLifeSpu' queryParams="state=2" />
     </div>)
   }

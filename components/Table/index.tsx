@@ -1,20 +1,13 @@
-import * as React from 'react'
+import React from 'react'
 import { Table } from 'antd'
+import 'antd/lib/table/style/index.css'
 import { request } from './util'
-import PropTypes from 'prop-types'
 
 const DEFAULT_PAGE_SIZE = 10
 const DEFAULT_CURRENT = 1
 
-const decorator = (WrapComponent: any) => {
-    class Main extends React.Component<any, any>{
-        render() {
-            return <WrapComponent {...this.props} />
-        }
-    }
-    return Main
-}
-interface TableProps{
+
+export interface TableProps{
     // 数据源地址 传了这个参数意味着加载和翻页时都会从这个加载数据
     dataUrl?:string,
     update?: Function,
@@ -23,7 +16,7 @@ interface TableProps{
     ref?:Function | string,
     [propName: string]:any
 }
-class Table3 extends React.Component<TableProps, any>{
+class Table37 extends React.Component<TableProps, any>{
     constructor(props:any) {
         super(props)
         this.state = {
@@ -81,4 +74,4 @@ class Table3 extends React.Component<TableProps, any>{
     }
 }
 
-export default Table3
+export default Table37

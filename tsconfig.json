@@ -1,19 +1,24 @@
 {
     "compilerOptions": {
-        "outDir": "/",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "target": "es6",
-        "allowSyntheticDefaultImports": true,
+//        "strictNullChecks": true,
+        "outDir": "dist/tsc",
         "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
-        "jsx": "react"
+        "jsx": "react",
+        "declaration": true,
+//        "noUnusedParameters": true,
+//        "noUnusedLocals": true,
+        "target": "es6",
+        "lib": [
+            "dom",
+            "es7"
+        ]
     },
-    "include": [
-        "./src/**/*"
-    ],
+    "include": ["./components/**/*"],
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "lib",
+        "es"
     ]
 }
